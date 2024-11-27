@@ -1,6 +1,6 @@
 # Diffinity
 
-https://diffinity.com
+https://diffinity.vercel.app
 
 Diffinity is a JavaScript component for differencing and merging files interactively in a browser (diff/merge). It provides a rich API that enables you to easily integrate Diffinity into your existing web application. It is suitable for comparing text files online, such as .txt, .html, .xml, .c, .cpp, .java, .js, etc.
 
