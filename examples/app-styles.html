@@ -1,0 +1,102 @@
+<!--
+This example demonstrates the minimum amount of code required to use Diffinity.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Diffinity - Application example</title>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="Jamie Peabody" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+	<style type="text/css">
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.column-layout {
+			display: flex;
+		}
+		.column-layout > * {
+			flex: 1;
+			height: 90px;
+		}
+		.full-width-layout > * {
+			height: 120px;
+		}
+        em {
+            font-style: italic;
+            color: #888;
+        }
+	</style>
+</head>
+<body>
+	<div>
+		<em>Added and removed from the start and end.</em>
+		<div class="column-layout">
+			<div id="diffinity0"></div>
+			<div id="diffinity1"></div>
+		</div>
+	</div>
+
+    <div>
+		<em>Added and removed from the middle.</em>
+		<div class="column-layout">
+			<div id="diffinity2"></div>
+			<div id="diffinity3"></div>
+		</div>
+	</div>
+
+    <div>
+		<em>One line with the other empty.</em>
+		<div class="column-layout">
+			<div id="diffinity4"></div>
+			<div id="diffinity5"></div>
+		</div>
+	</div>
+
+    <div>
+		<em>Multiple lines with the other empty.</em>
+		<div class="column-layout">
+			<div id="diffinity6"></div>
+			<div id="diffinity7"></div>
+		</div>
+	</div>
+
+    <div>
+		<em>Added and removed from the end.</em>
+		<div class="column-layout">
+			<div id="diffinity8"></div>
+			<div id="diffinity9"></div>
+		</div>
+	</div>
+
+    <div>
+		<em>No changes.</em>
+		<div class="column-layout">
+			<div id="diffinity10"></div>
+			<div id="diffinity11"></div>
+		</div>
+	</div>
+
+	<div>
+		<em>Changed lines</em>
+		<div class="column-layout">
+			<div id="diffinity12"></div>
+			<div id="diffinity13"></div>
+		</div>
+	</div>
+
+	<div>
+		<em>Options</em>
+		<div class="full-width-layout">
+			<div id="diffinity14"></div>
+		</div>
+	</div>
+
+</body>
+</html>

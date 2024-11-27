@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Diffinity - Example change styles</title>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="" />
+	<meta name="keywords" content="diffinity,diff,merge,compare" />
+	<meta name="author" content="Jamie Peabody" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+	<!-- Diffinity -->
+	<script type="text/javascript" src="/lib/diffinity.js"></script>
+	<link type="text/css" rel="stylesheet" href="/lib/diffinity.css" />
+
+	<style type="text/css">
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.column-layout {
+			display: flex;
+		}
+		.column-layout > * {
+			flex: 1;
+			height: 90px;
+		}
+		.full-width-layout > * {
+			height: 90px;
+		}
+		#diffinity11 { height: 140px; }
+
+		/* dark mode example */
+		.dark.diffinity-editor .CodeMirror-line {
+			color: #bcbcbc;
+		}
+		.dark.diffinity-editor .CodeMirror,
+		.dark.diffinity-editor {
+			background-color: #1e1e1e;
+			border-color: #606060;
+		}
+		.dark.diffinity-editor .CodeMirror-selected {
+			background-color: #434360;
+		}
+		.dark.diffinity-editor .CodeMirror-linenumber {
+			color: #727272;
+		}
+		.dark.diffinity-editor .CodeMirror-gutters {
+			background-color: #2D2D2D;
+			border-color: #606060;
+		}
+		.dark.diffinity-editor .CodeMirror-code {
+			color: #858585;
+			background-color: #252526;
+		}
+		.dark.diffinity-editor .diffinity.CodeMirror-gutter-background.current {
+			background-color: #777;
+		}
+		.dark.diffinity-editor .diffinity.current .CodeMirror-linenumber {
+			color: #F9F9F9;
+			font-weight: bold;
+		}
+		.dark.diffinity-editor .merge-button {
+			color: #ccc;
+		}
+		.dark.diffinity-editor .merge-button:hover {
+			color: #666;
+		}
+		.dark.diffinity-editor .current .merge-button:hover {
+			color: #fff;
+		}
+
+		/* changed styles */
+		.dark.diffinity-editor .diffinity.c.CodeMirror-linebackground {
+			border-color: #c9b900;
+    		background-color: #585100;
+		}
+
+		/* lhs styles (deleted-from) */
+		.dark.diffinity-editor .diffinity.rhs.a.no-end.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.rhs.a.no-start.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.lhs.no-end.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.lhs.d.CodeMirror-linebackground {
+			border-color: #b30000;
+		}
+		.dark.diffinity-editor .diffinity.lhs.d.CodeMirror-linebackground {
+			background-color: #5a0000;
+		}
+		/* ind is an inline delete */
+		.dark.diffinity-editor .diffinity.ch.ind.lhs {
+			text-decoration: line-through;
+			color: #ffd126;
+		}
+		.dark.diffinity-editor .diffinity.ch.d.lhs {
+			text-decoration: line-through;
+			color: #ff7f7f;
+		}
+
+		/* rhs styles (added-to) */
+		.dark.diffinity-editor .diffinity.lhs.no-end.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.lhs.no-start.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.rhs.a.CodeMirror-linebackground {
+			border-color: #a3d1ff;
+		}
+		.dark.diffinity-editor .diffinity.rhs.a.CodeMirror-linebackground {
+			background-color: #24507c;
+		}
+		/* ina is an inline add */
+		.dark.diffinity-editor .diffinity.ch.ina.rhs {
+			color: #ffeb00;
+		}
+		.dark.diffinity-editor .diffinity.ch.a.rhs {
+			color: inherit;
+		}
+		.dark.diffinity-editor .diffinity.current.lhs.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.current.rhs.CodeMirror-linebackground {
+			border-color: black;
+		}
+
+		.dark.diffinity-editor .diffinity.no-start.end.CodeMirror-linebackground,
+		.dark.diffinity-editor .diffinity.no-end.start.CodeMirror-linebackground {
+			background: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<caption>Inserted and removed at start but not end</caption>
+		<div class="column-layout">
+			<div id="diffinity0"></div>
+			<div id="diffinity1"></div>
+		</div>
+	</div>
+	<br />
+
+	<div>
+		<caption>Removed and added from the middle</caption>
+		<div class="column-layout">
+			<div id="diffinity2"></div>
+			<div id="diffinity3"></div>
+		</div>
+	</div>
+	<br />
+
+	<div>
+		<caption>One document empty, one line</caption>
+		<div class="column-layout">
+			<div id="diffinity4"></div>
+			<div id="diffinity5"></div>
+		</div>
+	</div>
+	<br />
+
+	<div>
+		<caption>One document empty, multiple lines</caption>
+		<div class="column-layout">
+			<div id="diffinity6"></div>
+			<div id="diffinity7"></div>
+		</div>
+	</div>
+	<br />
+
+	<div>
+		<caption>Inserted and removed at the end</caption>
+		<div class="column-layout">
+			<div id="diffinity8"></div>
+			<div id="diffinity9"></div>
+		</div>
+	</div>
+	<br />
+
+	<div>
+		<caption>Changed lines</caption>
+		<div class="full-width-layout">
+			<div id="diffinity10"></div>
+		</div>
+	</div>
+	<br />
+
+	<div>
+		<caption>Custom styles</caption>
+		<div class="full-width-layout">
+			<div class="dark" id="diffinity11"></div>
+		</div>
+	</div>
+	<br />
+
+	<script type="text/javascript">
+		document.onreadystatechange = function () {
+			if (document.readyState !== 'complete') {
+				return;
+			}
+
+		const data = [{
+			lhs: `\
+
+the quick red fox
+jumped over the hairy dog
+`,
+			rhs: `\
+the quick brown fox
+jumped over the lazy dog
+`
+		}, {
+			lhs: `\
+the quick red fox
+jumped over the hairy dog
+`,
+			rhs: `\
+
+the quick brown fox
+jumped over the lazy dog
+`
+		}, {
+			lhs: `\
+
+
+the quick red fox
+jumped over the hairy dog
+`,
+			rhs: `\
+
+
+
+the quick brown fox
+jumped over the lazy dog
+`
+		}, {
+			lhs: `\
+
+
+the quick brown fox
+jumped over the lazy dog
+`,
+			rhs: `\
+
+
+
+the quick red fox
+jumped over the hairy dog
+`
+		}, {
+			lhs: ``,
+			rhs: `\
+the quick brown fox
+`
+		}, {
+			lhs: `\
+the quick red fox
+`,
+			rhs: ``
+		}, {
+			lhs: ``,
+			rhs: `\
+the quick brown fox
+jumped over the lazy dog
+`
+		}, {
+			lhs: `\
+the quick red fox
+jumped over the hairy dog
+`,
+			rhs: ``
+		}, {
+			lhs: `\
+the quick brown fox
+jumped over the lazy dog`,
+			rhs: `\
+the quick brown fox
+jumped over the lazy dog
+
+and the fence`
+		}, {
+			lhs: `\
+the quick brown fox
+jumped over the lazy dog
+
+and the fence`,
+			rhs: `\
+the quick brown fox
+jumped over the lazy dog`
+		}, {
+			lhs: `\
+the quick red fox
+jumped over the hairy dog`,
+			rhs: `\
+the quick brown fox
+jumped over the lazy dog`
+		}, {
+			lhs: `\
+the quick red fox
+jumped over the hairy
+dog
+and the fence
+
+`,
+			rhs: `\
+the quick brown fox
+jumped over the lazy
+dog
+
+and the postman
+`
+}];
+		console.log(data.length);
+		for (let i = 0; i < data.length; ++i) {
+			const { lhs, rhs } = data[i];
+			const darkModeOptions = i === 11 ? {
+				bgcolor: '#434360'
+			} : {}
+			const diffinity = new Diffinity(`#diffinity${i}`, {
+				license: 'lgpl-separate-notice',
+				...darkModeOptions,
+				lhs,
+				rhs
+			});
+
+			if (i === 0 || i === 1) {
+				// On init, scroll to first diff
+				diffinity.once('updated', () => {
+					diffinity.scrollToDiff('next');
+				});
+			}
+		}
+	};
+	</script>
+</body>
+</html>

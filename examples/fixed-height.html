@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Diffinity - Example fixed height editor</title>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="" />
+	<meta name="keywords" content="diffinity,diff,merge,compare" />
+	<meta name="author" content="Jamie Peabody" />
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+	<!-- Diffinity -->
+	<link type="text/css" rel="stylesheet" href="/lib/diffinity.css" />
+	<script type="text/javascript" src="/lib/diffinity.js"></script>
+
+	<style type="text/css">
+		html, body {
+			margin: 0;
+		}
+		#compare {
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div id="compare"></div>
+
+	<script>
+		const diffinity = new Diffinity('#compare', {
+			license: 'lgpl'
+		});
+		diffinity.once('updated', () => {
+			diffinity.lhs('the quick red fox\njumped over the hairy dog');
+			diffinity.rhs('the quick brown fox\njumped over the lazy dog');
+		});
+	</script>
+</body>
+</html>
