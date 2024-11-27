@@ -96,7 +96,7 @@ function getSplash({ notice, left, top }) {
 		<span class="diffinity-icon"></span>
 		This software is a Combined Work using Diffinity and is covered by the
 		${notice} license. For the full license, see
-		<a target="_blank" href="http://www.diffinity.com">http://www.diffinity.com/license</a>.
+		<a target="_blank" href="http://www.diffinity.vercel.app">http://www.diffinity.vercel.app/license</a>.
 	</p>
 </div>`);
 }

@@ -187,7 +187,7 @@ All notable changes to this project will be documented in this file. See [standa
 * patch: Fixes resize issue when using zoom [#152](https://github.com/khulnasoft/Diffinity/issues/152).
 
 ### 4.3.2
-* patch: Reset the current change position when [setValue](https://diffinity.com/doc##options_callbacks), [clear](https://diffinity.com/doc#clear), [lhs](https://diffinity.com/doc#lhs) or [rhs](https://diffinity.com/doc#rhs) are called.
+* patch: Reset the current change position when [setValue](https://diffinity.vercel.app/doc##options_callbacks), [clear](https://diffinity.vercel.app/doc#clear), [lhs](https://diffinity.vercel.app/doc#lhs) or [rhs](https://diffinity.vercel.app/doc#rhs) are called.
 
 ### 4.3.1
 * patch: Updated README.md to fix incorrect option name.
